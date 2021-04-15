@@ -1,0 +1,1571 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title>Ontology_Details</title>
+<style type="text/css">
+table {
+border-style: solid;
+border-color: #000066;
+background-color: white;
+}
+th {
+border-style: solid;
+border-color: silver;
+background-color: #9999ff;
+}
+body {
+background-color: #ccccff;
+}
+td {
+border-style: solid;
+border-color: silver;
+}
+
+</style>
+</head>
+<body style="padding: 20px;">
+<h1 style="text-align: center;">Ontology Details</h1>
+<h2>General Notes</h2>
+<ul>
+<li>The number appearing after a leaf is rough ballpark count of the
+number of instances("facts") of that concept in the data
+warehouse.&nbsp; This is not a count of patients with those
+facts.&nbsp; These numbers are updated periodically but
+not as frequently as new data is added to the warehouse.&nbsp; These
+counts also help guide the i2b2 system in creating more efficient
+database queries on the backend.</li>
+<li>The blue circle icon (e.g.: \WFUBMC\Diagnoses\Admitting
+Diagnosis) is called a "modifier",
+dragging a diagnosis over to a query group would query for all
+instances of that diagnosis; instead dragging over the Admitting
+Diagnosis modifier under that diagnosis, would only query for that
+diagnosis where it is in the EHR as the Admitting Diagnosis for an
+encounter.</li>
+<li>There is a process for indentifying new concepts that are not
+currently in the ontology, but they may be missing for a while.&nbsp;
+If there is a new medication, new department, etc. that you need to
+query, contact the data warehouse team and it can probably be added
+manually ahead of schedule.<br>
+</li>
+</ul>
+<h2>WFUBMC<br>
+</h2>
+<ul>
+<li>
+<h3>Demographics</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Demographic data related to the patient, generally as it was at the
+time of the visit unless otherwise specified.&nbsp; <br>
+</li>
+<li><span style="font-weight: bold;">Availability:&nbsp;</span>
+20+ years for all categories unless otherwise specified.<br>
+</li>
+</ul>
+</ul>
+<ul>
+<li>
+<h4>Age</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Age at visit/event<br>
+</li>
+</ul>
+<li>
+<h4>Age Now</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:&nbsp;</span>
+Age today</li>
+<li><span style="font-weight: bold;">Dimensional Query:</span>&nbsp;
+This is calculated on the fly and may be slower to query.<br>
+</li>
+</ul>
+<li>
+<h4>Ethnicity</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Whether a patient identifies as Hispanic or not</li>
+<li><span style="font-weight: bold;">Availability:&nbsp;</span>
+Was not recorded pre-EPIC.&nbsp; Data only from after 09/22/2012, and
+likely only collected when patient first comes in for a visit after
+that date.&nbsp; There is not necessarily a value registered for every
+visit.<br>
+</li>
+<li><span style="font-weight: bold;">Values:</span> <br>
+<table style="text-align: left; width: 458px; height: 100px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">ETHNICITY:HISPANIC<br>
+</td>
+<td style="vertical-align: top;">Hispanic<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">ETHNICITY:NOTHISPANIC<br>
+</td>
+<td style="vertical-align: top;">Not Hispanic<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">ETHNICITY:PR<br>
+</td>
+<td style="vertical-align: top;">Patient Refused to
+identify<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">ETHNICITY:UN<br>
+</td>
+<td style="vertical-align: top;">Unknown<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">ETHNICITY:OT<br>
+</td>
+<td style="vertical-align: top;">Other<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">ETHNICITY:NI<br>
+</td>
+<td style="vertical-align: top;">No Information<br>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+</li>
+</ul>
+<li>
+<h4>Gender</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Values:</span>
+<table style="text-align: left; width: 456px; height: 116px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|SEX:F<br>
+</td>
+<td style="vertical-align: top;">Female<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|SEX:M<br>
+</td>
+<td style="vertical-align: top;">Male<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|SEX:U<br>
+</td>
+<td style="vertical-align: top;">Unknown<br>
+</td>
+</tr>
+</tbody>
+</table>
+<span style="font-weight: bold;"></span></li>
+</ul>
+<li>
+<h4>Language</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Values:</span>
+<table style="text-align: left; width: 520px; height: 584px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:ARA<br>
+</td>
+<td style="vertical-align: top;">Arabic<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:CHN<br>
+</td>
+<td style="vertical-align: top;">Chinese<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:DEF<br>
+</td>
+<td style="vertical-align: top;">Sign Language<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:ENG</td>
+<td style="vertical-align: top;">English<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:FRN</td>
+<td style="vertical-align: top;">French<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:GER</td>
+<td style="vertical-align: top;">German<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:GRK</td>
+<td style="vertical-align: top;">Greek<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:HIN</td>
+<td style="vertical-align: top;">Hindi<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:JPN</td>
+<td style="vertical-align: top;">Japanese<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:KHM<br>
+</td>
+<td style="vertical-align: top;">Khmer<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:OTH<br>
+</td>
+<td style="vertical-align: top;">Other/Unknown<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:PHL<br>
+</td>
+<td style="vertical-align: top;">Filipino<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:POL<br>
+</td>
+<td style="vertical-align: top;">Polish<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:RUS<br>
+</td>
+<td style="vertical-align: top;">Russian<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:SNI<br>
+</td>
+<td style="vertical-align: top;">Spanish - Needs
+Interpreter (no longer in use)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:SPN<br>
+</td>
+<td style="vertical-align: top;">Spanish<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:VNM<br>
+</td>
+<td style="vertical-align: top;">Vietnamese<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:ZHS<br>
+</td>
+<td style="vertical-align: top;">Chinese (Simplified)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|LANGUAGE:ZHT<br>
+</td>
+<td style="vertical-align: top;">Chinese (Traditional)<br>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<li>
+<h4>Marital Status</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Values:</span>
+<table style="text-align: left; width: 456px; height: 116px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:D<br>
+</td>
+<td style="vertical-align: top;">Divorced<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:F<br>
+</td>
+<td style="vertical-align: top;">Significant Other<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:L<br>
+</td>
+<td style="vertical-align: top;">Separated, Legally<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:M</td>
+<td style="vertical-align: top;">Married<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:O</td>
+<td style="vertical-align: top;">Life Partner<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:P</td>
+<td style="vertical-align: top;">Separated, Not Legally<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:S</td>
+<td style="vertical-align: top;">Single<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:U</td>
+<td style="vertical-align: top;">Unknown<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|MARITAL:W</td>
+<td style="vertical-align: top;">Widowed<br>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<li>
+<h4>Race</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Availability:</span>
+WakeOne began allowing multiple races per person.&nbsp; These were not
+supported by the EDW until 02/11/2015.&nbsp; Legacy patients and visits
+will probably have only one code.&nbsp; Going forward patient race may
+be identified by multiple facts, or in the patient dimension
+byconcatenated codes such as 'B-W' to specify both Black and White
+races. <br>
+</li>
+<li><span style="font-weight: bold;">Values:</span><br>
+</li>
+</ul>
+<ul>
+<table style="text-align: left; width: 662px; height: 284px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+<th style="vertical-align: top;">Legacy Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:B<br>
+</td>
+<td style="vertical-align: top;">Black or African American<br>
+</td>
+<td style="vertical-align: top;">Black<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:I<br>
+</td>
+<td style="vertical-align: top;">American Indian or Alaska
+Native<br>
+</td>
+<td style="vertical-align: top;">Indian,American<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:O</td>
+<td style="vertical-align: top;">Asian<br>
+</td>
+<td style="vertical-align: top;">Oriental<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:P</td>
+<td style="vertical-align: top;">Native Hawaiian or Other
+Pacific Islander<br>
+</td>
+<td style="vertical-align: top;">Pacific Islander<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:R</td>
+<td style="vertical-align: top;">Patient Refused<br>
+</td>
+<td style="vertical-align: top;">NA<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:S</td>
+<td style="vertical-align: top;">Latin American or Hispanic<br>
+</td>
+<td style="vertical-align: top;">Spanish Surname<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:U<br>
+</td>
+<td style="vertical-align: top;">Unknown<br>
+</td>
+<td style="vertical-align: top;">Unknown<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:W<br>
+</td>
+<td style="vertical-align: top;">White or Caucasian<br>
+</td>
+<td style="vertical-align: top;">White<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">DEM|RACE:X<br>
+</td>
+<td style="vertical-align: top;">Other<br>
+</td>
+<td style="vertical-align: top;">Other<br>
+</td>
+</tr>
+</tbody>
+</table>
+</ul>
+<li>
+<h4>Religion</h4>
+</li>
+<li>
+<h4>Vital Status</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span> Y =
+Known deceased, N = Not known to be deceased</li>
+<li><span style="font-weight: bold;">Dimensional Query:</span>
+This is available per patient and not per visit.<br>
+</li>
+<li><span style="font-weight: bold;">Availability:</span> If the
+patient died under our care, the value is most likely 'Y', if the
+patient died when not at the hospital, the value may be 'Y', but there
+is no assurance that we were ever notified of the death, so the value
+could be erroneously 'N'.<br>
+</li>
+</ul>
+<li>
+<h4>ZIP Code</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>
+Patient's primary address zip code at the time of each visit.<br>
+<span style="font-weight: bold;"></span></li>
+<li><span style="font-weight: bold;">Availability:</span> 5-digit
+zip when available.&nbsp; Some values are only the first 3-digits of
+the zip due to historical obfuscation to protect PHI.&nbsp; The longer
+5+4 zip is never recorded in the data warehouse, but is available when
+patient mailing addresses are requested.<br>
+</li>
+</ul>
+</ul>
+<li>
+<h3>Diagnoses <br>
+</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp; <a
+href="http://en.wikipedia.org/wiki/International_Statistical_Classification_of_Diseases_and_Related_Health_Problems">ICD-9</a>
+codeset.&nbsp; Technically ICD-9 Procedures subset may live under here
+too, though they are also wholly contained in Procedures
+ontology.&nbsp; <a href="http://en.wikipedia.org/wiki/ICD-10">ICD-10</a>
+available later in 2015.</li>
+<li><span style="font-weight: bold;">Availability:</span> 20+
+years<br>
+</li>
+</ul>
+</ul>
+<li>
+<h3>Laboratory&nbsp; <br>
+</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Laboratory tests and panels and results when available.</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>20+
+years.&nbsp; Some sets are notably missing:&nbsp; Blood bank is a
+separate system that has not been connected yet; Sendout results are
+notoriously not input fully or at all in some cases, occassionally they
+are partially entered into notes, but not into the usual discrete
+fields.<br>
+</li>
+<li><span style="font-weight: bold;">Query Set Value:</span>&nbsp;
+Lab result values can be tested with the Set Value functionality.&nbsp;
+Result types, units, and ranges may differ for the same
+test depending on how long ago the sample was processed and by which
+laboratory.&nbsp; When both numeric and textual results are available
+for a test, Set Value options are determined by which one is more
+prevalent overall.&nbsp; Similarly when Set Value offers preset
+selectable values, the options have been determined by which are most
+prevalent overall.<br>
+</li>
+</ul>
+</ul>
+<ul>
+<li>
+<h4>LOINC By CPT</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp; <a
+href="http://en.wikipedia.org/wiki/LOINC">LOINC</a> codes organized by
+the same structure as CPT codes.</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>Mappings
+from WFU Codes were done by hand using the internally published <a
+href="http://intranet.wakehealth.edu/Departments/Pathology/Handbook/">Dept.
+of Pathology Laboratory Handbook</a> to cover the top 80% of labs
+performed at the hospital as of 2011.&nbsp; As such, available LOINC
+codes are a subset of WFU Codes, and therefore it is preferred to use
+WFU Codes for completeness.<br>
+</li>
+</ul>
+<li>
+<h4>LOINC By Number</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+LOINC
+codes navigable by number.&nbsp; Items in this tree are identical to
+items in the LOINC By CPT tree, just organized differently.</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>Mappings
+from WFU Codes were done by hand to cover the top 80% of labs
+performed at the hospital as of 2011.&nbsp; As such, available LOINC
+codes
+are a subset of WFU Codes, and therefore it is preferred to use WFU
+Codes for completeness.</li>
+</ul>
+<li>
+<h4>WFU Codes</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Proprietary code set of lab codes, organized by Order/Panel (e.g.:
+CBCD) and by lab Test (e.g.: RBC)</li>
+</ul>
+</ul>
+<li>
+<h3>Medication</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp; <a
+href="http://en.wikipedia.org/wiki/RxNorm">RxNorm</a> codes</li>
+<li><span style="font-weight: bold;">Availability:</span>&nbsp;
+15+ years.&nbsp; Mappings from WFU medications were initially done
+programmatically using the <a href="http://rxnav.nlm.nih.gov/">RxNav</a>
+API.&nbsp;
+The EPIC install included a custom mapping to RxNorm.&nbsp; These two
+efforts have been merged.&nbsp; Though in many cases a medication is
+only specified in the ontology by its ingredient, the specific drug may
+be available to be returned with a data request.&nbsp; Also note we may
+have record of prescriptions ordered, but not of fills unless it was
+done at our own pharmacy.<br>
+</li>
+</ul>
+</ul>
+<ul>
+<li>
+<h4>Drug Products by Generic Ingredient Combinations</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+RxNorm codes organized alphabetically by ingredient.&nbsp; Items
+in this tree are largely the same as what is available under the NDF-RT
+tree, though there are some concepts unique to this set.</li>
+</ul>
+<li>
+<h4>NDF-RT</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+RxNorm codes organized by the <a
+href="http://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/NDFRT/">NDF-RT</a>
+structure.&nbsp; Items in this tree are largely the same as what is
+available under the Drug Products tree, though there are some concepts
+unique to this set.<br>
+</li>
+</ul>
+</ul>
+<li>
+<h3>Procedures</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp; <span
+style="text-decoration: underline;"></span>CPT codeset.&nbsp; These
+codes are mainly in the context of billing, and not infrequently
+hospital billed CPTs do not necessarily match hospital ordered CPTs.<br>
+</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years<br>
+</li>
+</ul>
+</ul>
+<li>
+<h3>Providers</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:&nbsp; </span>Providers
+are organized by EPIC Department, and then obfuscated to a simple
+sequenced number.&nbsp; If you need to identify specific
+providers, the BRSA Data Coordinators who handle data requests can map
+the EPIC Provider ID to the i2b2 obfuscated ID for you.&nbsp; <br>
+</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>For
+every fact where available, so dependent on the data category in
+question.</li>
+<li><span style="font-weight: bold;">Fact Queries:</span>&nbsp;
+Dragging over the provider number folder (e.g.
+\Providers\Allergy\00001\) finds all facts which are labeled with that
+provider.&nbsp; Dragging the entire department folder works the same
+way, identifying facts associated with that department's providers.<br>
+</li>
+<li><span style="font-weight: bold;">Dimensional Queries:&nbsp;</span>
+Dragging over the specific leaves under that folder (e.g.
+\Providers\Allergy\00001\Admitting) finds all encounters for which that
+provider is named the Admitting Provider.&nbsp; (Likewise for
+Discharging, Family/PCP, Referring provider leaves)<br>
+</li>
+</ul>
+</ul>
+<li>
+<h3>Reports</h3>
+</li>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:&nbsp; </span>This
+is a "beta" set of radiology reports.&nbsp; Querying will identify only
+if the report exists, but there is no functionality to query the text
+within that report.&nbsp; Full notes and reports can be returned with
+BRSA Data Requests.<br>
+</li>
+<li><span style="font-weight: bold;">Availability:</span>&nbsp;
+2010-2011 only.<br>
+</li>
+</ul>
+</ul>
+<li>
+<h3>Visit Details</h3>
+</li>
+<ul>
+<li>
+<h4>Admit Source</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Where the patient came from for the encounter.<br>
+</li>
+</ul>
+<ul>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time.</li>
+</ul>
+<ul>
+<li><span style="font-weight: bold;">Dimensional Queries: </span>Finds
+all encounters for which this is the patient source.</li>
+</ul>
+<ul>
+<li><span style="font-weight: bold;">Values:</span>
+<table style="text-align: left; width: 737px; height: 812px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+<th style="vertical-align: top;">Legacy Description<br>
+</th>
+<th style="vertical-align: top;">Years Relevant<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">1<br>
+</td>
+<td style="vertical-align: top;">Unused<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2002-2010<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">2<br>
+</td>
+<td style="vertical-align: top;">Transfer Ambulatory
+Surgery<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2012+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">3<br>
+</td>
+<td style="vertical-align: top;">Transfer from Hospice<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2010+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">4<br>
+</td>
+<td style="vertical-align: top;">Transfer between NCBH,
+LMC<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2012+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">6<br>
+</td>
+<td style="vertical-align: top;">NB Not Hospital / Other
+Facility<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2004<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">7<br>
+</td>
+<td style="vertical-align: top;">Transfer between DMC,
+NCBH<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2013+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">8<br>
+</td>
+<td style="vertical-align: top;">Transfer between DMC, LMC<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2013+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">C<br>
+</td>
+<td style="vertical-align: top;">Non Healthcare Facility<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">D<br>
+</td>
+<td style="vertical-align: top;">Transfer in our facility
+(NCBH between acute/psych/rehab)<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">1992+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">E<br>
+</td>
+<td style="vertical-align: top;">Emergency<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">F<br>
+</td>
+<td style="vertical-align: top;">Transfer/Referred from
+Facility (Outside Health Care Facility)<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">H<br>
+</td>
+<td style="vertical-align: top;">Obsolete, use R<br>
+</td>
+<td style="vertical-align: top;">HMO Referral<br>
+</td>
+<td style="vertical-align: top;">1992-2009<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">I<br>
+</td>
+<td style="vertical-align: top;">Obsolete, use R </td>
+<td style="vertical-align: top;">Inhouse Follow up<br>
+</td>
+<td style="vertical-align: top;">1991-2003<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">L<br>
+</td>
+<td style="vertical-align: top;">Law Enforcement/Court<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">N<br>
+</td>
+<td style="vertical-align: top;">Transfer from Skilled
+Nursing Facility, ICF, ALF<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">O<br>
+</td>
+<td style="vertical-align: top;">Obsolete, use R</td>
+<td style="vertical-align: top;">Hlth-On-Call Referral<br>
+</td>
+<td style="vertical-align: top;">1991+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">P<br>
+</td>
+<td style="vertical-align: top;">Obsolete, use R</td>
+<td style="vertical-align: top;">P.A.L. Transfer<br>
+</td>
+<td style="vertical-align: top;">1991-2012<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Q<br>
+</td>
+<td style="vertical-align: top;">Obsolete, use R</td>
+<td style="vertical-align: top;">P.A.L. DR's Office<br>
+</td>
+<td style="vertical-align: top;">1999-2010<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">R<br>
+</td>
+<td style="vertical-align: top;">Clinics and Med Offices<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">S<br>
+</td>
+<td style="vertical-align: top;">Self<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">1991-2012<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">T<br>
+</td>
+<td style="vertical-align: top;">Hospital Transfer<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">U<br>
+</td>
+<td style="vertical-align: top;">Info Not Available,
+Unknown<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL (fewer 2004-2011)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">W<br>
+</td>
+<td style="vertical-align: top;">Do not use<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">X<br>
+</td>
+<td style="vertical-align: top;">Born Inside this Hospital<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">2013+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Y<br>
+</td>
+<td style="vertical-align: top;">Obsolete<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+<td style="vertical-align: top;">ALL<br>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<li>
+<h4>Admit Type</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Hospital Admit Type for the encounter.<br>
+</li>
+</ul>
+<ul>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time.</li>
+<li><span style="font-weight: bold;">Dimensional Queries: </span>Finds
+all encounters for which this is the type.</li>
+<li><span style="font-weight: bold;">Values:</span>
+<table style="text-align: left; width: 456px; height: 116px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">C<br>
+</td>
+<td style="vertical-align: top;">General Clinical
+Research Center<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">D<br>
+</td>
+<td style="vertical-align: top;">Nonemergency<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">E<br>
+</td>
+<td style="vertical-align: top;">Emergency (Medical
+intervention for severe, life threatening or disabling condition)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">L</td>
+<td style="vertical-align: top;">Addon (Obsolete)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">N</td>
+<td style="vertical-align: top;">Nonemergency<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">R</td>
+<td style="vertical-align: top;">Reservation/Elective
+(Condition permits time to schedule)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">S</td>
+<td style="vertical-align: top;">Standby<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">T</td>
+<td style="vertical-align: top;">Trauma Center/Activation
+(Designated Trauma Center)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">U</td>
+<td style="vertical-align: top;">Urgent (Immediate
+attention for care and treatment)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">W<br>
+</td>
+<td style="vertical-align: top;">Newborn<br>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</ul>
+<ul>
+<li>
+<h4>Department</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Department which saw the patient for the encounter, or where the
+patient's bed is located.<br>
+</li>
+<li><span style="font-weight: bold;">Availability:</span>&nbsp;
+20+ years.&nbsp; More reliably recorded last 10+ years.</li>
+<li><span style="font-weight: bold;">Query Set Value:</span>&nbsp;
+You can specify a specific room within that department.</li>
+</ul>
+<li>
+<h4>Dsicharge Type / Disposition<br>
+</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Hospital Discharge Type for the encounter.<br>
+</li>
+</ul>
+<ul>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time.</li>
+<li><span style="font-weight: bold;">Dimensional Queries: </span>Finds
+all encounters for which this is the type.</li>
+<li><span style="font-weight: bold;">Values:</span>
+<table style="text-align: left; width: 913px; height: 968px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top;">Concept Code<br>
+</th>
+<th style="vertical-align: top;">Description<br>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top;">1 / R1<br>
+</td>
+<td style="vertical-align: top;">TO NCBH PSYCH UNIT / WITH PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">2<br>
+</td>
+<td style="vertical-align: top;">TO NCBH TCU 
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">3 / R3<br>
+</td>
+<td style="vertical-align: top;">TO NCBH REHAB UNIT / WITH PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">4</td>
+<td style="vertical-align: top;">ED DISMISS NEVER ARRIVED<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">5</td>
+<td style="vertical-align: top;">ED DISMISS DIVERTED
+ELSEWHERE<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">6</td>
+<td style="vertical-align: top;">ED LEFT BEFORE SEEN<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">7 / R7<br>
+</td>
+<td style="vertical-align: top;">CRITICAL ACCESS HOSPITAL
+/ WITH PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">8</td>
+<td style="vertical-align: top;">ORGAN DONOR DEPART<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">9</td>
+<td style="vertical-align: top;">ADMITTED AS IP TO THIS
+HOSP (&gt; 3 DAYS AFTER DISMISS CHECKOUT)<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">A</td>
+<td style="vertical-align: top;">LEFT AGAINST MEDICAL
+ADVICE<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">B<br>
+</td>
+<td style="vertical-align: top;">REFER TO ED<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">C / RC<br>
+</td>
+<td style="vertical-align: top;">CANCER CENTER
+(DESIGNATED) OR CHILDRENS HOSP / WITH PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">D, RD<br>
+</td>
+<td style="vertical-align: top;">HOME OR SELF CARE / WITH
+PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">E<br>
+</td>
+<td style="vertical-align: top;">EXPIRED<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">EE<br>
+</td>
+<td style="vertical-align: top;">ED ELOPEMENT<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">F / RF<br>
+</td>
+<td style="vertical-align: top;">FEDERAL HOSPITAL / WITH
+PLANNED ACUTE IP READMISSION</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">G / GR<br>
+</td>
+<td style="vertical-align: top;">ANOTHER HOSPITAL / WITH
+PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">H / RH<br>
+</td>
+<td style="vertical-align: top;"> HOME HEALTH CARE SVC /
+WITH PLANNED ACUTE IP READMISSION</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">HIP<br>
+</td>
+<td style="vertical-align: top;">HOSPICE IN PLACE<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">I / RI<br>
+</td>
+<td style="vertical-align: top;"> INTERMEDIATE CARE
+FACILITY / WITH PLANNED ACUTE IP READMISSION</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">J / RJ<br>
+</td>
+<td style="vertical-align: top;">COURT LAW ENFORCEMENT /
+WITH PLANNED ACUTE IP READMISSION</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">K<br>
+</td>
+<td style="vertical-align: top;">PSYCHIATRIC HOSPITAL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">L / RL<br>
+</td>
+<td style="vertical-align: top;">LONG TERM CARE / WITH
+PLANNED ACUTE IP READMISSION</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">LEF<br>
+</td>
+<td style="vertical-align: top;">LEFT WITHOUT BEING SEEN<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">M<br>
+</td>
+<td style="vertical-align: top;">REFERRED TO PHYSICIANS
+OFFICE<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">N<br>
+</td>
+<td style="vertical-align: top;">ADMITTED TO NCBH<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">NED<br>
+</td>
+<td style="vertical-align: top;">TO NCBH ED<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Nurse<br>
+</td>
+<td style="vertical-align: top;">NURSING FACILITY<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">O<br>
+</td>
+<td style="vertical-align: top;">ANOTHER HOSPITAL PT
+REFERENCE<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">P<br>
+</td>
+<td style="vertical-align: top;">STILL A PATIENT<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">R<br>
+</td>
+<td style="vertical-align: top;">REHAB FACILITY<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">reserved<br>
+</td>
+<td style="vertical-align: top;">RESERVED FOR CMS
+NATIONAL ASSIGNMENT<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">S / RS<br>
+</td>
+<td style="vertical-align: top;">SKILLED NURSING FACILITY
+(MCARE CERTIFIED) / WITH PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Short Term<br>
+</td>
+<td style="vertical-align: top;">SHORT TERM HOSPITAL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Swing Bed<br>
+</td>
+<td style="vertical-align: top;">SWING BED<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">T / RT<br>
+</td>
+<td style="vertical-align: top;">ANOTHER TYPE OF HEALTH
+CARE INSTITUTION NOT DEFINED / WITH PLANNED ACUTE IP READMISSION<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">U<br>
+</td>
+<td style="vertical-align: top;">ANOTHER HOSPITAL NO BED
+IN WAKE HEALTH<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">V<br>
+</td>
+<td style="vertical-align: top;">ASSISTED LIVING<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">W<br>
+</td>
+<td style="vertical-align: top;">EXPIRED IN MEDICAL
+FACILITY<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">X<br>
+</td>
+<td style="vertical-align: top;">EXPIRED DEAD ON ARRIVAL<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Y<br>
+</td>
+<td style="vertical-align: top;">HOSPICE HOME<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Z<br>
+</td>
+<td style="vertical-align: top;">HOSPICE MEDICAL FACILITY<br>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<li>
+<h4>Department</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Department associated with an encounter.&nbsp; Typically admission
+department for Inpatient visits.</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time, 30+ years.<br>
+</li>
+</ul>
+<li>
+<h4>Exists</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+This is a simple query to ask if any encounters exist.&nbsp; This
+primarily is used if you want to find all patients seen within a date
+range not by any specific criteria, as date range functionality
+requires a contextual concept.</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time.</li>
+</ul>
+<li>
+<h4>Length of stay</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Discharge date minus admit date, in most cases rounded.<br>
+</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time.</li>
+</ul>
+</ul>
+<ul>
+<li>
+<h4>Office</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+This data point will probably go away and/or be replaced by an updated
+load.&nbsp; It represented the physical clinic a patient was seen at,
+different from the department concept.<br>
+</li>
+</ul>
+<ul>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>15+
+years until EPIC conversion.<br>
+</li>
+</ul>
+<li>
+<h4>Visit Type</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Whether the encounter is classified as Inpatient or Outpatient.&nbsp;
+Be forewarned this distinction is not always clearcut, as in such cases
+as patients under observation who are using beds.</li>
+<li><span style="font-weight: bold;">Availability:&nbsp; </span>All
+time.</li>
+</ul>
+</ul>
+<li>
+<h3>Vitals</h3>
+</li>
+<ul>
+<li style="font-weight: bold;">
+<h4>Blood Pressure</h4>
+</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:&nbsp;</span>
+Separate Systolic and Diastolic values.&nbsp; Choose <span
+style="font-style: italic;">same financial encounter</span> and <span
+style="font-style: italic;">Items Instance will be the same</span> to
+query from the same measurement and apply Position or Vital Source
+modifiers.</li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; mmHg</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, more frequently recorded after 2003.</li>
+</ul>
+</ul>
+</ul>
+<ul style="font-weight: bold;">
+<ul>
+<li>
+<h4>BMI</h4>
+</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:&nbsp;</span>
+Standard Body Mass Index calculation: 703 * ( kg / m2 ) / ( lb / in2 ) </li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; kg/m2</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, much more frequently recorded after EPIC conversion.</li>
+</ul>
+</ul>
+</ul>
+<ul style="font-weight: bold;">
+<ul>
+<li>
+<h4>Height</h4>
+</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Height of patient.</li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; Inches.</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, much more frequently recorded after EPIC conversion.</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>
+<h4>Pulse</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Pulse rate. <br>
+</li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; Beats
+per minute.</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, more frequently recorded after 2003.<br>
+</li>
+</ul>
+<li>
+<h4>Respiration Rate</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Breathing rate.</li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; Breaths
+per minute.</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, more frequently recorded after 2003.</li>
+</ul>
+<li>
+<h4>Temperature</h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:</span>&nbsp;
+Body temperature.</li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; Degrees
+Fahrenheit.</li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, more frequently recorded after 2003.<br>
+</li>
+</ul>
+<li>
+<h4><span style="font-weight: bold;">Weight</span></h4>
+</li>
+<ul>
+<li><span style="font-weight: bold;">Description:&nbsp;</span>
+Weight of patient.<br>
+</li>
+<li><span style="font-weight: bold;">Units:</span>&nbsp; Pounds
+(lbs).<span style="font-weight: bold;"></span></li>
+<li><span style="font-weight: bold;">Availability:</span> 15+
+years, much more frequently recorded after EPIC conversion.<br>
+</li>
+</ul>
+</ul>
+</ul>
+<br>
+<br>
+</body>
+</html>
