@@ -278,7 +278,33 @@ i2b2.ONT.ctrlr.FindBy = {
 			}
 
 			// display the results
-			var c = results.refXML.getElementsByTagName('concept');
+			var cnodelist = results.refXML.getElementsByTagName('concept');
+            var c = Array.prototype.slice.call(cnodelist,0);
+            var f = $('ontFormFindName');
+            sortType = f.ontFindSorting.options[f.ontFindSorting.selectedIndex].value;
+
+            if ( sortType != "cname" ) {
+                c.sort( function(a,b) {
+                if ( sortType == "ctotalnum" ) {
+                    var at = i2b2.h.getXNodeVal(a,'totalnum');
+                    if ( at == null ) at = "0";
+                    at = parseInt(at);
+                    var bt = i2b2.h.getXNodeVal(b,'totalnum');
+                    if ( bt == null ) bt = "0";
+                    bt = parseInt(bt);
+                    if ( at > bt ) return -1;
+                    if ( at < bt ) return 1;
+                    return 0;
+                }
+                else if ( sortType == "cfullpath" ) {
+                    var at = i2b2.h.getXNodeVal(a,'key');
+                    var bt = i2b2.h.getXNodeVal(b,'key');
+                    if ( at < bt ) return -1;
+                    if ( at > bt ) return 1;
+                    return 0;
+                }
+                });
+            }
 			totalCount = totalCount + c.length;
 			var oset = [];
 			for(var i2=0; i2<1*c.length; i2++) {
